@@ -26,12 +26,15 @@ function Employees() {
     <div className='container'>
       <h1>Employee Data Table</h1>
       <table>
+        <thead>
         <tr className='table-heading'>
             <th>ID</th>
             <th>Name</th>
             <th>Email</th>
             <th>Role</th>
         </tr>
+        </thead>
+        <tbody>
         {employees.map((emp , idx) => {
             if(idx >= (page-1)*itemsPerPage && idx < page*itemsPerPage){
                 return <tr key={emp.id}>
@@ -42,6 +45,7 @@ function Employees() {
                         </tr>
             }
         })}
+        </tbody>
       </table>
       <div className='footer'>
         <button onClick={() => {
